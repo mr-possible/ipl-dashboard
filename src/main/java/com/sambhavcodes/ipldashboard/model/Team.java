@@ -1,16 +1,24 @@
 package com.sambhavcodes.ipldashboard.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Team {
 
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
-  private long teamName;
+  private String teamName;
   private long totalMatchesPlayed;
   private long totalWins;
+
+  public Team(String teamName, long totalMatchesPlayed) {
+    this.teamName = teamName;
+    this.totalMatchesPlayed = totalMatchesPlayed;
+  }
 
   public long getId() {
     return id;
@@ -20,11 +28,11 @@ public class Team {
     this.id = id;
   }
 
-  public long getTeamName() {
+  public String getTeamName() {
     return teamName;
   }
 
-  public void setTeamName(long teamName) {
+  public void setTeamName(String teamName) {
     this.teamName = teamName;
   }
 
