@@ -3,6 +3,6 @@ This is a use-case project for me learned through youtube channel named - Java B
 
 
 # Technology Stack Used 
-For Backend - Spring Boot
-For Database - We are using embedded in memory database of sorts - HSQL Db. 
-For Frontend - ReactJS.
+1. For Backend - Spring Boot
+2. For Database - We are using embedded in memory database of sorts - HSQL Db.
+3. For Frontend - ReactJS.
