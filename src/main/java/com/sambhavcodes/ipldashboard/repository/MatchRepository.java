@@ -16,7 +16,7 @@ public interface MatchRepository extends JpaRepository<Match, Long> {
   List<Match> getByTeam1OrTeam2OrderByDateDesc(String teamName1, String teamName2,
       Pageable pageable);
 
-  @Query(value = "select m from Match m where (m.team1 = :teamName or m.team2 = :teamName) and m.date BETWEEN :startDate and :endDate order by m.date desc")
+  @Query("select m from Match m where (m.team1 = :teamName or m.team2 = :teamName) and m.date between :startDate and :endDate order by date desc")
   List<Match> getMatchesByTeamBetweenDates(@Param("teamName") String teamName,
       @Param("startDate") LocalDate startDate, @Param("endDate") LocalDate endDate);
 

@@ -9,10 +9,10 @@ function App() {
       <Switch>
         {/*picked this route first because switch takes acc to order*/}
         <Route path="/teams/:teamName/matches/:year">
-          <MatchPage/>
+          <MatchPage />
         </Route>
         <Route path="/teams/:teamName">
-          <TeamPage/>
+          <TeamPage />
         </Route>
       </Switch>
     </Router>
