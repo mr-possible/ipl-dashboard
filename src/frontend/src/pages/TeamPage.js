@@ -17,7 +17,7 @@ export const TeamPage = () => {
           setTeam(await data);
         };
         fetchMatches();
-      }, []
+      }, [teamName] // call the hook when teamName changes
   );
 
   if (!team || !team.teamName) {
@@ -26,9 +26,10 @@ export const TeamPage = () => {
   return (
       <div className="TeamPage">
         <h1>{team.teamName}</h1>
-        <MatchDetailCard match={team.matches[0]}/>
+        <MatchDetailCard teamName={team.teamName} match={team.matches[0]}/>
         {team.matches.slice(1).map(
-            match => (<MatchSmallCard match={match}/>))}
+            match => (
+                <MatchSmallCard teamName={team.teamName} match={match}/>))}
       </div>
   );
 }
