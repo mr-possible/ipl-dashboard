@@ -1,0 +1,21 @@
+.HomePage {
+
+  a {
+    color: cornsilk;
+  }
+
+  .header-section {
+    font-size: 2rem;
+    color: cornsilk;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 2px;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+}
