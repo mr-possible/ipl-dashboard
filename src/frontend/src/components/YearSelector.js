@@ -20,7 +20,7 @@ export const YearSelector = ({teamName}) => {
                 <Link to={`/teams/${teamName}/matches/${year}`}>{year}</Link>
               </li>
           )
-          }
-          </ul>
-          )
         }
+      </ul>
+  )
+}
