@@ -1,9 +1,9 @@
 import React from "react";
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import {MatchDetailCard} from "../components/MatchDetailCard";
+import {MatchDetailCard} from "../components/MatchDetailCard.jsx";
 import './MatchPage.scss';
-import {YearSelector} from "../components/YearSelector";
+import {YearSelector} from "../components/YearSelector.jsx";
 
 export const MatchPage = () => {
   const [matches, setMatches] = useState([]);
@@ -13,7 +13,7 @@ export const MatchPage = () => {
       () => {
         const fetchMatches = async () => {
           const response = await fetch(
-              `${process.env.REACT_APP_ROOT_URL}/teams/${teamName}/matches?year=${year}`);
+              `${import.meta.env.VITE_APP_ROOT_URL}/teams/${teamName}/matches?year=${year}`);
           const data = await response.json();
           setMatches(data);
         };

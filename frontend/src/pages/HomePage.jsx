@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {TeamTile} from "../components/TeamTile";
+import {TeamTile} from "../components/TeamTile.jsx";
 import './HomePage.scss';
 
 export const HomePage = () => {
@@ -7,7 +7,7 @@ export const HomePage = () => {
 
   useEffect(() => {
     const fetchAllTeams = async () => {
-      const response = fetch(`${process.env.REACT_APP_ROOT_URL}/teams`);
+      const response = fetch(`${import.meta.env.VITE_APP_ROOT_URL}/teams`);
       const data = (await response).json();
       setTeams(await data);
     };
