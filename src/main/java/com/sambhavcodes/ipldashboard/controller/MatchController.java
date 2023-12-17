@@ -2,7 +2,6 @@ package com.sambhavcodes.ipldashboard.controller;
 
 import com.sambhavcodes.ipldashboard.model.Match;
 import com.sambhavcodes.ipldashboard.repository.MatchRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -12,8 +11,11 @@ import java.util.List;
 @CrossOrigin
 public class MatchController {
 
-    @Autowired
-    private MatchRepository matchRepository;
+    private final MatchRepository matchRepository;
+
+    public MatchController(MatchRepository matchRepository) {
+        this.matchRepository = matchRepository;
+    }
 
     @GetMapping("/teams/{teamName}/matches")
     public List<Match> getAllMatchesForTeam(@PathVariable String teamName,

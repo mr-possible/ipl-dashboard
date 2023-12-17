@@ -1,6 +1,9 @@
 package com.sambhavcodes.ipldashboard.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,6 +11,7 @@ import java.time.LocalDate;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class Match {
     @Id
     private Long id;

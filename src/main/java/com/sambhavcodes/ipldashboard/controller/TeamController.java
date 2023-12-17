@@ -4,7 +4,6 @@ import com.sambhavcodes.ipldashboard.model.Match;
 import com.sambhavcodes.ipldashboard.model.Team;
 import com.sambhavcodes.ipldashboard.repository.MatchRepository;
 import com.sambhavcodes.ipldashboard.repository.TeamRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,11 +15,13 @@ import java.util.List;
 @CrossOrigin
 public class TeamController {
 
-    @Autowired
-    private TeamRepository teamRepository;
+    private final MatchRepository matchRepository;
+    private final TeamRepository teamRepository;
 
-    @Autowired
-    private MatchRepository matchRepository;
+    public TeamController(TeamRepository teamRepository, MatchRepository matchRepository) {
+        this.teamRepository = teamRepository;
+        this.matchRepository = matchRepository;
+    }
 
     @GetMapping("/teams")
     public Iterable<Team> getAllTeams() {
