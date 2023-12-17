@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useParams, Link} from "react-router-dom";
-import {MatchDetailCard} from "../components/MatchDetailCard";
-import {MatchSmallCard} from "../components/MatchSmallCard";
+import {MatchDetailCard} from "../components/MatchDetailCard.jsx";
+import {MatchSmallCard} from "../components/MatchSmallCard.jsx";
 import {PieChart} from 'react-minimal-pie-chart';
 import './TeamPage.scss';
 
@@ -13,7 +13,7 @@ export const TeamPage = () => {
       () => {
         const fetchMatches = async () => {
           const response = await fetch(
-              `${process.env.REACT_APP_ROOT_URL}/team/${teamName}`);
+              `${import.meta.env.VITE_APP_ROOT_URL}/team/${teamName}`);
           const data = await response.json();
           setTeam(data);
         };
@@ -52,7 +52,7 @@ export const TeamPage = () => {
                 <MatchSmallCard teamName={team.teamName} match={match}/>
             ))}
         <div className="more-link-section">
-          <Link to={`/teams/${teamName}/matches/${process.env.REACT_APP_DATA_END_YEAR}`}>More >> </Link>
+          <Link to={`/teams/${teamName}/matches/${import.meta.env.VITE_APP_DATA_END_YEAR}`}>More... </Link>
         </div>
       </div>
   );
